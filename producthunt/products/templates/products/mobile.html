@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+
+
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+
+        <div class="row">
+          {% for mob in mobiles.all %}
+
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="{{ mob.image1.url }}" alt="">
+              <div class="card-body">
+                <a href="{% url 'detail_view' mob.id%}"<p class="card-text">{{ mob.name }}</p></a>
+
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          </div>
+          </div>
+          </div>
+
+
+
+{% endblock %}

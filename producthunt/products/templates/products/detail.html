@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br/>
+<div class="row">
+    <div class="col-2">
+        <img src="{{ product.icon.url }}" class="img-fluid"/>
+    </div>
+    <div class="col-10">
+        <a href="{{ product.url }}"><h1>{{ product.title }}</h1></a>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-8">
+        <img src="{{ product.image.url }}" class="img-fluid"/>
+    </div>
+    <div class="col-4">
+        <a href="{% url 'admit_card'%}"><button class="btn btn-primary btn-lg btn-block"><i class="fa fa-caret-up"></i> Buy Now </button></a>
+    </div>
+</div>
+<br/>
+<div class="row">
+    <div class="col-4">
+        <h4>{{ product.title }}</h4>
+
+    </div>
+    <div class="col-4  text-right">
+       <h4>{{ product.pub_date_pretty }}</h4>
+    </div>
+</div>
+<br/>
+<div class="row">
+    <div class="col-4">
+        <h4>Prize : {{ product.prize}}</h4>
+
+    </div>
+    <div class="col-4  text-right">
+       <h4>{{ product.pub_date_pretty }}</h4>
+    </div>
+</div>
+  <div class="col-8">
+       <p>{{ product.body }}</p>
+    </div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Dz6UmueWNbM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#<form id="upvote" method="post" action="{% url 'upvote' product.id %}">
+   {% csrf_token %}
+    <input type="hidden"/>
+</form>
+
+{% endblock %}
