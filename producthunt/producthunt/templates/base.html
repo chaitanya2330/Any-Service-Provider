@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -54,7 +54,8 @@
           <li class="nav-item dropdown">
              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
              <div class="dropdown-menu" aria-labelledby="dropdown01">
-               <a class="dropdown-item" href="{% url 'mobile' %}">Mobile</a>
+                 <a class="dropdown-item" href="{% url 'mobile' %}">Mobile</a>
+                 <a class="dropdown-item" href="{% url 'mobile' %}">Clothes</a>
 
              </div>
            </li>
@@ -90,9 +91,6 @@
 
 {% endblock %}
 </div>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
-
 <footer class="text-muted">
   <div class="container text-center" >
     &copy; Chaitanya{% now 'Y''M''D'%}
